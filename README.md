@@ -13,6 +13,12 @@ Minimal setup in server.js
   });
 ```
 
-Go to localhost:4444/subpath/noNextAssets and confirm app tries to fetch from /subpath/_next/ which does not exist.
+Go to
+
+```
+localhost:4444/subpath/noNextAssets
+```
+
+and confirm app tries to fetch from /subpath/_next/ which does not exist.
 
 Desired solution: _next assets load with the subpath included. And Links href/prefetch work with the full path.
