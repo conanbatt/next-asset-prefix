@@ -11,9 +11,8 @@ app.prepare().then(() => {
   // Pages are using file api, all pages under pages/subdomain/etc
   app.setAssetPrefix('/subpath');
 
-  server.use('/subpath', (req, res) => {
+  server.use('/', (req, res) => {
     const { path } = req;
-    console.log('hit sub path');
     handle(req, res);
   });
 
