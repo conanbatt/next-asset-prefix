@@ -16,8 +16,9 @@ Minimal setup in server.js
 Routes
 ```
   module.exports = routes()
-    .add('dynamic', '/subpath/:id/dynamic', '/dynamic')
+    .add('dynamic', '/:id/dynamic', '/dynamic')
 ```
+Note: adding /subpath/ to the routes in next/routes simpl doesnt find the page.
 
 Go to
 
