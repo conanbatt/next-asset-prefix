@@ -1,7 +1,8 @@
 import React from 'react'
-import Link from 'next/link'
-import Head from '../../components/head'
-import Nav from '../../components/nav'
+//import Link from 'next/link'
+import {Link} from '../routes';
+import Head from '../components/head'
+import Nav from '../components/nav'
 
 const Home = () => (
   <div>
@@ -16,10 +17,11 @@ const Home = () => (
 
       <div className="row">
         <Link
-          href="/subpath/other"
+          href="/1/dynamic"
+          as="/subpath/1/dynamic"
         >
           <a className="card">
-            <p> Other </p>
+            <p> Dynamic </p>
           </a>
         </Link>
       </div>

@@ -1,5 +1,6 @@
 import React from 'react'
-import Link from 'next/link'
+//import Link from 'next/link'
+import {Link} from '../routes';
 import Head from '../components/head'
 import Nav from '../components/nav'
 
@@ -9,17 +10,14 @@ const Home = () => (
     <Nav />
 
     <div className="hero">
-      <h1 className="title">Other</h1>
-      <p className="description">
-        To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
-
+      <h1 className="title">Dynamic</h1>
       <div className="row">
         <Link
-          href="/subpath/index"
+          href="/one"
+          as="/subpath/one"
         >
           <a className="card">
-            <p> Home </p>
+            <p> One </p>
           </a>
         </Link>
       </div>
