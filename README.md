@@ -7,18 +7,22 @@ Minimal setup in server.js
 ```
   app.setAssetPrefix('/subpath');
 
-  server.use('/', (req, res) => {
+  server.use('/subpath', (req, res) => {
     const { path } = req;
     handle(req, res);
   });
 ```
 
+Routes
+```
+  module.exports = routes()
+    .add('dynamic', '/subpath/:id/dynamic', '/dynamic')
+```
+
 Go to
 
 ```
-localhost:4444/subpath/noNextAssets
+localhost:4444/subpath/one
 ```
 
-and confirm app tries to fetch from /subpath/_next/ which does not exist.
-
-Desired solution: _next assets load with the subpath included. And Links href/prefetch work with the full path.
+Desired solution: _next assets load with the subpath included. Pages and routes for /subpath match and we can do client navigation. 
