@@ -26,4 +26,6 @@ Go to
 localhost:4444/subpath/one
 ```
 
-Desired solution: _next assets load with the subpath included. Pages and routes for /subpath match and we can do client navigation. 
+Expected: _next assets load with the subpath included. Pages and routes for /subpath match and we can do client navigation. 
+
+Actual: _next assets load for non-dynamic pages, but does not find the bundle for /:id, so it does server side navigation
