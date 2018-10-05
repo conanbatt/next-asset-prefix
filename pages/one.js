@@ -1,10 +1,11 @@
 import React from 'react'
 //import Link from 'next/link'
-import {Link} from '../routes';
+//import Router, { withRouter } from 'next/router';
+import {Link, Router} from '../routes';
 import Head from '../components/head'
 import Nav from '../components/nav'
 
-const Home = () => (
+const Content = ({ router }) => (
   <div>
     <Head title="Home" />
     <Nav />
@@ -16,14 +17,9 @@ const Home = () => (
       </p>
 
       <div className="row">
-        <Link
-          href="/1/dynamic"
-          as="/subpath/1/dynamic"
-        >
-          <a className="card">
-            <p> Dynamic </p>
-          </a>
-        </Link>
+        <a className="card" onClick={() => Router.push('/dynamic', '/subpath/1/dynamic')}>
+          <p> Dynamic 4</p>
+        </a>
       </div>
     </div>
 
@@ -76,4 +72,17 @@ const Home = () => (
   </div>
 )
 
-export default Home
+class Home extends React.Component {
+  componentDidMount() {
+    const { router } = this.props;
+    if (router) {
+      router.prefetch('/dynamic');
+    }
+  }
+
+  render() {
+    return (<Content {...this.props} />)
+  }
+}
+
+export default Home;
